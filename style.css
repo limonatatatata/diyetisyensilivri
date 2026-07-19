@@ -240,43 +240,52 @@ ul { list-style: none; }
 /* ==============================================================
    9. MOBİL UYUMLULUK (RESPONSIVE TASARIM)
    ============================================================== */
+/* ==============================================================
+   9. MOBİL UYUMLULUK (RESPONSIVE TASARIM)
+   ============================================================== */
 @media (max-width: 992px) {
-    /* Genel kapsayıcı sınırlarını ve boşluklarını mobilde daraltıyoruz */
-    .container { padding: 0 24px; }
-    .nav-container { padding: 0; }
+    /* Genel kapsayıcı sınırlarını mobilde daraltıyoruz */
+    .container { padding: 0 20px; }
+    
+    /* İçeriği ortalamak için flex ayarlarını güncelliyoruz */
+    .nav-container { padding: 0; justify-content: center; } 
     .nav-menu { display: none; }
     
-    /* Mobil başlık (navbar) ve logoyu dar ekrana uyacak şekilde küçültüyoruz */
-    .navbar { height: 90px; }
-    .brand-logo { height: 65px; } 
+    /* Kalabalığı azaltmak için mobilde üstteki "Randevu Al" butonunu gizliyoruz */
+    .nav-cta { display: none; } 
+    
+    /* Mobil başlık (navbar) ve logoyu büyütüp ortalıyoruz */
+    .navbar { height: 100px; } 
+    .brand-logo { height: 85px; margin: 0 auto; } 
     
     /* Izgara sistemlerini alt alta diz (Tek sütun yapısı) */
     .hero-grid, .about-grid, .footer-grid, .grid-layout { grid-template-columns: 1fr; }
     
-    /* TİPOGRAFİ DÜZELTMELERİ: Büyük başlıkların mobilde ekrandan taşmasını engelliyoruz */
-    .hero-content h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 15px; }
-    .hero-content p { max-width: 100%; font-size: 1.05rem; margin-bottom: 25px; }
-    .section-header h2, .about-text h2 { font-size: 2.2rem; }
+    /* TİPOGRAFİ DÜZELTMELERİ: Daha minimal başlıklar ve metinler */
+    .hero-content h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 15px; } 
+    .hero-content p { max-width: 100%; font-size: 1rem; margin-bottom: 25px; } 
+    .section-header h2, .about-text h2 { font-size: 2rem; }
 
-    /* Ekrana sığmayan butonların esneyerek (flex-wrap) alt alta geçmesini sağlıyoruz */
-    .hero-actions { flex-wrap: wrap; gap: 12px; margin-bottom: 35px; }
+    /* Butonlar: Sıkışıklığı önlemek için alt alta ve tam genişlikte döküyoruz */
+    .hero-actions { flex-direction: column; gap: 12px; margin-bottom: 30px; } 
+    .hero-actions a { width: 100%; text-align: center; } 
     
-    /* Güven simgelerini (Kişiye özel vb.) dikey hizalıyoruz */
-    .hero-trust { flex-direction: column; gap: 15px; border-top: none; padding-top: 10px; }
+    /* Güven simgelerini (Kişiye özel vb.) minimalize edip dikey hizalıyoruz */
+    .hero-trust { flex-direction: column; gap: 12px; border-top: none; padding-top: 10px; }
 
     /* Görsellerin boyutlarını mobil cihazlara göre sınırı taşırmayacak şekilde küçültüyoruz */
-    .hero-section { padding-top: 130px; }
-    .hero-slider-container, .about-portrait { height: 380px; border-radius: var(--radius-soft); width: 100%; } 
+    .hero-section { padding-top: 120px; }
+    .hero-slider-container, .about-portrait { height: 350px; border-radius: var(--radius-soft); width: 100%; } 
     
-    /* Süreç çizelgesini yataydan dikeye çevirip ortadaki bağlantı çizgisini gizliyoruz */
-    .timeline-container { flex-direction: column; gap: 35px; }
+    /* Süreç çizelgesi: İkonları ve boşlukları küçülterek ferahlatıyoruz */
+    .timeline-container { flex-direction: column; gap: 25px; }
     .timeline-container::before { display: none; } 
-    .timeline-node { width: 100%; display: flex; align-items: center; text-align: left; gap: 20px; }
-    .node-circle { margin: 0; flex-shrink: 0; }
+    .timeline-node { width: 100%; display: flex; align-items: center; text-align: left; gap: 15px; }
+    .node-circle { margin: 0; flex-shrink: 0; width: 55px; height: 55px; font-size: 1.4rem; } 
     
-    /* Blog ve Diğer Kart Ayarlarındaki boşlukları azaltıyoruz */
+    /* Blog ve Diğer Kart Ayarlarındaki boşlukları azaltıyoruz (daha minimal görünüm) */
     .address-box { max-width: 100%; }
-    .google-card-mock { padding: 30px; }
-    .article-post { padding: 30px 20px; }
-    .blog-header h1 { font-size: 2.2rem; }
+    .google-card-mock { padding: 25px; }
+    .article-post { padding: 25px 20px; }
+    .blog-header h1 { font-size: 2rem; }
 }
