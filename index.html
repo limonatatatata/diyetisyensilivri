@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <header class="navbar">
+   <header class="navbar">
         <div class="container nav-container">
             <div class="brand-wrapper">
                 <a href="#home">
@@ -20,17 +20,22 @@
                 </a>
             </div>
             
+            <!-- YENİ EKLENEN: Mobil Menü İkonu -->
+            <div class="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </div>
+            
             <nav class="nav-menu">
                 <a href="#home">Ana Sayfa</a>
                 <a href="#hakkimda">Hakkımda</a>
                 <a href="#yaklasimim">Yaklaşımım</a>
-                <a href="#alanlar">Danışmanlık Alanlarım</a>
-                <a href="#surec">Süreç</a>
+                <a href="#alanlar">Çalışma Alanları</a>
                 <a href="#blog">Blog</a>
             </nav>
             
+            <!-- EKSİK OLAN VE GERİ EKLENEN KISIM -->
             <div class="nav-cta">
-                <a href="https://www.instagram.com/dytecemozguryalcin" target="_blank" class="btn-pill">Randevu Al</a>
+                <a href="https://www.instagram.com/dytecemozguryalcin" target="_blank" class="btn-pill btn-solid">Randevu Al</a>
             </div>
         </div>
     </header>
@@ -480,5 +485,28 @@
             heroTrack.style.transform = `translateX(-${heroActiveIndex * 100}%)`;
         }, 6000); // 6000 ms = 6 saniye
     </script>
+	<!-- MOBİL MENÜ İŞLEVSELLİĞİ -->
+<script>
+// "DOMContentLoaded", HTML belgesi tamamen yüklendikten sonra kodun çalışmasını garanti eder.
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // 1. Gerekli HTML elemanlarını seçiyoruz: İkon ve Menü
+    const menuBtn = document.querySelector(".mobile-menu-btn");
+    const navMenu = document.querySelector(".nav-menu");
+
+    // 2. Sayfada bu elemanların olup olmadığını kontrol ediyoruz (Hata almamak için)
+    if(menuBtn && navMenu) {
+        
+        // 3. Menü butonuna bir 'tıklama' (click) dinleyicisi ekliyoruz
+        menuBtn.addEventListener("click", function() {
+            
+            // 4. toggle özelliği: Eğer menüde 'active' sınıfı yoksa ekler (menüyü açar),
+            //    Eğer menüde 'active' sınıfı varsa çıkarır (menüyü kapatır).
+            navMenu.classList.toggle("active");
+            
+        });
+    }
+});
+</script>
 </body>
 </html>
